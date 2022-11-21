@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import { onAuthStateChanged, signOut } from "firebase/auth"
+import { auth } from "../src/config/firebase.config"
+import Home from './components/Home';
+import ConnectModal from './components/ConnectModal';
+
 
 function App() {
+  const [user, setUser] = useState(null)
+
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+  });
+
+  const handleLogOut = async() => {
+    await signOut(auth)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='user-connected'>
+
+      {user && (
+        <div className='user-infos'>
+            <span>{user ?.displayName}</span>
+            <button><i onClick={() => handleLogOut()}>Déconecter</i></button>
+          </div>
+      )}
+        
+        {user ? (
+          <Home />
+        ) : (<ConnectModal />) }
+
+      </div>
     </div>
   );
 }
