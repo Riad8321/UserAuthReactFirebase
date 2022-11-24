@@ -1,19 +1,18 @@
 
 import firebase from "firebase/compat/app"
 import "firebase/compat/auth"
-import { getAnalytics } from "firebase/analytics";
+
 
 const app = firebase.initializeApp({
-    apiKey: process.env.REACT_APP_API_KEY,
-    authDomain: "react-firebase-d68fe.firebaseapp.com",
-    projectId: "react-firebase-d68fe",
-    storageBucket: "react-firebase-d68fe.appspot.com",
-    messagingSenderId: "409974779424",
-    appId: "1:409974779424:web:0081539d57ab5efc8e9645",
-    measurementId: "G-3XGZE02Q5S"
+    apiKey: "AIzaSyDLDMWYkYYIqOcUYfKgoS2gJ8tYvUfj1oY",
+    authDomain: "react-app-auth-aa689.firebaseapp.com",
+    projectId: "react-app-auth-aa689",
+    storageBucket: "react-app-auth-aa689.appspot.com",
+    messagingSenderId: "388455073035",
+    appId: "1:388455073035:web:cc96280dd2e633a5000e0e",
 });
 
 export const auth = app.auth();
-const analytics = getAnalytics(app);
+
 
 export default app;

@@ -1,0 +1,65 @@
+.row {
+    display: flex;
+    margin: 20px;
+}
+.image-size {
+    height: 443px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 5px 4px 14px 1px rgba(0,0,0,0.36);
+    -webkit-box-shadow: 5px 4px 14px 1px rgba(0,0,0,0.20);
+    -moz-box-shadow: 5px 4px 14px 1px rgba(0,0,0,0.36);
+}
+
+.movie-app > .row {
+    overflow-x: auto;
+    flex-wrap: wrap;
+}
+
+.image-container {
+    position: relative;
+    transition: transform 0.2s;
+    margin: 20px;
+    width: 300px;
+    height: 443px;
+}
+
+.image-container:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    transition: 0.5s ease;
+    opacity: 0;
+    bottom: 0;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.movie-title {
+    color: white;
+}
+
+.search-box {
+    padding: 0;
+    height: 21px;
+    margin: auto 1px;
+}
+
+.movies-row {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
+

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import React from 'react'
 import './App.css';
 import { onAuthStateChanged, signOut } from "firebase/auth"
 import { auth } from "../src/config/firebase.config"
@@ -23,8 +24,8 @@ function App() {
 
       {user && (
         <div className='user-infos'>
-            <span>{user ?.displayName}</span>
-            <button><i onClick={() => handleLogOut()}>Déconecter</i></button>
+            <h1 className='user-name'> Bonjour {user.displayName}<span className="logged-in">●</span></h1>
+            <button className="button-9"><i onClick={() => handleLogOut()}>Déconnecter</i></button>
           </div>
       )}
         

@@ -21,7 +21,7 @@ const SignUp = () => {
          })  
     } catch (error) {
       console.log(error.message)
-      window.location.reload
+        window.location.reload();
     }
 
     console.log(registerEmail.current.value, registerPassword.current.value)
